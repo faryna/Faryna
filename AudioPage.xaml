@@ -1,0 +1,25 @@
+﻿<Page x:Class="VK_API.AudioPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="AudioPage" Height="455" Width="604">
+
+    <Grid x:Name="audioGrid">
+        <ListBox x:Name="MusicBox" HorizontalAlignment="Left" Height="350" Margin="10,90,0,0" VerticalAlignment="Top" Width="330" SelectionChanged="listBox1_SelectionChanged"/>
+        <Button Content="Prev" Height="23" HorizontalAlignment="Left" Margin="57,28,0,0" Name="buttonPrev" VerticalAlignment="Top" Width="32" Click="buttonPrev_Click" />
+        <Button Content="Play" Height="23" HorizontalAlignment="Left" Margin="10,28,0,0" Name="buttonPlayPause" VerticalAlignment="Top" Width="42" Click="buttonPlayPause_Click" />
+        <Button Content="Next" Height="23" HorizontalAlignment="Left" Margin="94,28,0,0" Name="buttonNext" VerticalAlignment="Top" Width="32" Click="buttonNext_Click" />
+        <Slider Height="23" HorizontalAlignment="Left" Margin="131,28,0,0" Name="slider1" VerticalAlignment="Top" Width="245" IsMouseCaptureWithinChanged="slider1_IsMouseCaptureWithinChanged" />
+        <Slider Name="SliderVolume" HorizontalAlignment="Left" Margin="376,28,0,0" VerticalAlignment="Top" Width="93" Minimum="0" Maximum="1" Value="0.1" ValueChanged="SliderVolume_ValueChanged"/>
+        <ListBox Name="_lisFriendMusic" HorizontalAlignment="Left" Height="326" Margin="369,114,0,0" VerticalAlignment="Top" Width="222" SelectionChanged="_lisFriendMusic_SelectionChanged">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Click="MenuItem_Click_1"  Header="{StaticResource ResourceKey=AudioPageMusicOfFriends}"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <Button Content="{StaticResource ResourceKey=AudioPageMyAudios}" HorizontalAlignment="Left" Margin="369,90,0,0" VerticalAlignment="Top" Width="222" Click="Button_Click_1"/>
+    </Grid>
+</Page>

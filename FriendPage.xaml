@@ -1,0 +1,24 @@
+﻿<Page x:Class="VK_API.FriendPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="FriendPage" Height="405" Width="547">
+
+    <Grid>
+        <ListBox Name="_listFriend" HorizontalAlignment="Left" Height="405" VerticalAlignment="Top" Width="380" Background="{x:Null}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Background="#FFD4D4D4" Height="71" VerticalAlignment="Top">
+                        <Image Name="_avatar" Source="{Binding Path=AvatarUrl}" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="73" />
+                        <Label Name="_nameLable" Content="{Binding Path=GetFullName}" HorizontalAlignment="Left" Margin="78,0,0,0" VerticalAlignment="Top" Width="227" Height="37" FontSize="18"/>
+                        <Image Name="_onlineImage" Source="{Binding Path=OnlineImage}" HorizontalAlignment="Left" Height="26" Margin="320,23,0,0" VerticalAlignment="Top" Width="26" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="{StaticResource ResourceKey=FriendPageAllFriendButton}" HorizontalAlignment="Left" Margin="385,0,0,0" VerticalAlignment="Top" Width="162" Height="34" Click="Button_Click_2"/>
+        <Button Content="{StaticResource ResourceKey=FriendPageOnlineFriendButton}" HorizontalAlignment="Left" Margin="385,39,0,0" VerticalAlignment="Top" Width="162" Height="34" Click="Button_Click_1"/>
+    </Grid>
+</Page>
